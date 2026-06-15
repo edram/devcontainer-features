@@ -151,15 +151,12 @@ if [ "$actual" != "$checksum" ]; then
     exit 1
 fi
 
-chmod +x "$binary_path"
-
-# Run claude install to set up launcher and shell integration
-echo "Setting up Claude Code..."
-"$binary_path" install ${TARGET:+"$TARGET"}
+# Install the verified binary globally so every user in the container can run it.
+install -m 0755 "$binary_path" /usr/local/bin/claude
 
 # Clean up downloaded file
 rm -f "$binary_path"
 
 echo ""
-echo "✅ Installation complete!"
+echo "✅ Claude Code $version installed to /usr/local/bin/claude"
 echo ""
