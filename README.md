@@ -7,6 +7,7 @@ A collection of [Dev Container Features](https://containers.dev/implementors/fea
 | Feature | Description |
 | ------- | ----------- |
 | [`claude-code`](./src/claude-code) | Installs the [Claude Code](https://code.claude.com/docs) CLI globally on the PATH. |
+| [`codex`](./src/codex) | Installs the [Codex](https://developers.openai.com/codex/quickstart?setup=cli) CLI globally on the PATH. |
 
 ## Usage
 
@@ -18,6 +19,9 @@ Reference a feature in your `devcontainer.json`:
     "features": {
         "ghcr.io/edram/devcontainer-features/claude-code:1": {
             "version": "stable"
+        },
+        "ghcr.io/edram/devcontainer-features/codex:1": {
+            "version": "latest"
         }
     }
 }
@@ -64,4 +68,5 @@ Run the tests locally:
 ```bash
 npm install -g @devcontainers/cli
 devcontainer features test --features claude-code --base-image mcr.microsoft.com/devcontainers/base:ubuntu .
+devcontainer features test --features codex --base-image mcr.microsoft.com/devcontainers/base:ubuntu .
 ```
