@@ -1,0 +1,26 @@
+name: "CI - Test Features"
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      matrix:
+        features:
+          - claude-code
+        baseImage:
+          - mcr.microsoft.com/devcontainers/base:ubuntu
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: "Install latest devcontainer CLI"
+        run: npm install -g @devcontainers/cli
+
+      - name: "Generating tests for '${{ matrix.features }}' against '${{ matrix.baseImage }}'"
+        run: devcontainer features test --features ${{ matrix.features }} --base-image ${{ matrix.baseImage }} .
