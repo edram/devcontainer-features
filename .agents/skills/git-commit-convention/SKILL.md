@@ -3,7 +3,7 @@ name: git-commit-convention
 description: Reference for writing structured git commit messages. Use when asked to write a commit, generate a commit message, review commit style, or work with conventional commits format.
 metadata:
   author: edram
-  version: 2026.06.05
+  version: 2026.06.17
   source: https://www.conventionalcommits.org/en/v1.0.0/
 ---
 
@@ -13,9 +13,10 @@ Conventional Commits 1.0.0 — a specification for writing commit messages that 
 - Scope narrows the affected area: `feat(auth):`, `fix(api):`
 - Breaking changes use `!` suffix or `BREAKING CHANGE:` footer (or both)
 - Footer tokens follow Git trailer convention
+- Default to English, but match the project's existing convention — check `git log` and follow whatever language recent commits use
 
 ```
-<type>[optional scope]<!>: <description>
+<type>[optional scope][!]: <description>
 
 [optional body]
 
@@ -35,3 +36,4 @@ Conventional Commits 1.0.0 — a specification for writing commit messages that 
 |-------|-------------|-----------|
 | Breaking Changes | `!` syntax and `BREAKING CHANGE` footer — when and how | [features-breaking](references/features-breaking.md) |
 | Footers | Token format rules, issue references, common tokens | [features-footers](references/features-footers.md) |
+| AI-Generated Changes | `Co-Authored-By` attribution for agent-authored commits — mandatory once it applies, fixed value format, and what not to add | [features-ai-attribution](references/features-ai-attribution.md) |
