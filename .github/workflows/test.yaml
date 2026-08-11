@@ -16,7 +16,7 @@ jobs:
           - feature: claude-code
             baseImage: mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm
           - feature: codex
-            baseImage: mcr.microsoft.com/devcontainers/base:ubuntu
+            baseImage: mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm
     steps:
       - uses: actions/checkout@v4
 
