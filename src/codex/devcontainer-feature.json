@@ -1,9 +1,13 @@
 {
     "id": "codex",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "name": "Codex",
     "documentationURL": "https://github.com/edram/devcontainer-features/tree/main/src/codex",
     "description": "Installs the Codex CLI, OpenAI's coding agent, globally on the PATH.",
+    "containerEnv": {
+        "CODEX_INSTALL_DIR": "/usr/local/bin",
+        "CODEX_HOME": "/usr/local/share/codex"
+    },
     "options": {
         "version": {
             "type": "string",
